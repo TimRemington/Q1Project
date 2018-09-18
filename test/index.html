@@ -1,21 +1,296 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- My CSS-->
+    <link type="text/css" rel="stylesheet" href="index.css" media="screen,projection" />
+    <!-- My JS -->
+    <script src="index.js" charset="utf-8"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+
     <title>Mocha</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mocha.css" />
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../index.css" />
   </head>
-  <body>
+  <body style="background-color:tan; font-family: 'Russo One', sans-serif;">
 
+    <div id="theinfo">
+      <!-- Cool circuitry background image -->
+      <div class="parallax-container center valign-wrapper" style="height:20px">
+        <div class="parallax">
+          <img src="../templatePic/circuitback.jpg">
+        </div>
+      </div>
 
-    
+      <!-- Modal that gives the user instructions -->
+      <div class="modal" id="instructions">
+        <div class="modal-content">
+          <h4>What is happening?</h4>
+          <p>In the near future, corporations have gotten so big the are starting to repurpose their employees into spies to get dirt on the other corps. You were selected (via the lottery... read the Terms of Service next time) to be the next agent. But are
+            you ready? Here is your identity. Commit its details to memory. You will then be tested. Don't fail.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="modal-close btn red">Okay, got it!</a>
+        </div>
+      </div>
+
+      <!-- Cool circuitry background image -->
+      <div class="parallax-container center valign-wrapper" style="height:20px">
+        <div class="parallax">
+          <img src="../templatePic/circuitback.jpg">
+        </div>
+      </div>
+
+      <!-- Header with info -->
+      <div class="container-wrapper">
+        <div class="row valign-wrapper">
+          <div class="col s1 m1 l1">
+            <img src="../templatePic/paranoia.png" style="height:70px; padding-top:10px; padding-left:15px">
+          </div>
+          <div class="col s11 m11 l11 center-align valign" style="padding-top:18px">
+            <h4 style="color:red">Here is your new identity, agent, commit these details to memory:</h4>
+          </div>
+        </div>
+        <div>
+          <a href="#instructions" class="btn small-btn modal-trigger green">Instructions</a>
+        </div>
+      </div>
+
+      <!-- Cool circuitry background image -->
+      <div class="parallax-container center valign-wrapper" style="height:60px">
+        <div class="parallax">
+          <img src="../templatePic/circuitback.jpg">
+        </div>
+      </div>
+
+      <!-- Card with PICTURE, NAME and BIO -->
+      <div class="row" style="background-color:black; padding-top:23px">
+        <div class="col s3 m3 l3">
+          <image class="left-align" src="../templatePic/person.jpg" style="height:300px">
+        </div>
+
+        <div class="col s9 m9 l9 left-align" style="color:limegreen">
+
+          <h3 style="bold; margin:0px" id="agentName">Name:</h3>
+          <h3 style="bold">Bio:</h3>
+          <font size='4'>
+            <p id="bio" style="color:lightgreen">Randomly generated Text</p>
+          </font>
+        </div>
+      </div>
+
+      <!-- Card with PERSONAL INFO, PREV EMPLOYMENT, HOBBIES and PAST HOMES -->
+      <div class="row" style="background-color:black">
+        <div class="col s3 m3 l3" style="color:limegreen">
+          <h5 style="text-weight:bold">Personal Info:</h5>
+          <div>
+            <ul>
+              <li><span>Age: </span><span id="age" style="color:lightgreen"></span></li>
+              <li><span>Weight: </span><span id="weight" style="color:lightgreen"></span></li>
+              <li><span>Height: </span><span id="height" style="color:lightgreen"></span></li>
+              <li><span>Nationality: </span><span id="nationality" style="color:lightgreen"></span></li>
+              <li><span>Zodiac Sign: </span><span id="zodiac" style="color:lightgreen"></span></li>
+              <li><span>Favorite Color: </span><span id="favCol" style="color:lightgreen"></span></li>
+              <li><span>Best Friend: </span><span id="bFF" style="color:lightgreen"></span></li>
+              <li><span>Favorite Animal: </span><span id="favAnimal" style="color:lightgreen"></span></li>
+              <li>Current Pets: </li>
+              <ul style="margin-left:15px;color:lightgreen">
+                <li id="pet1">Test animal</li>
+                <li id="pet2">Test animal</li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+        <div class="col s6 m6 l6" style="color:limegreen">
+          <h4 style="text-weight:bold; margin:0px">Previous Occupation:</h4>
+          <h5 id="oldjob"></h5>
+          <p id="companyinfo" style="color:lightgreen"></p>
+        </div>
+        <div class="col s3 m3 l3" style="color:limegreen">
+          <ul> Hobbies:
+            <div style="color:lightgreen">
+              <li id="hob1">What?</li>
+              <li id="hob2">What?</li>
+              <li id="hob3">What?</li>
+              <li id="hob4">What?</li>
+            </div>
+            <ul>
+              <br></br>
+              <ul> Past Residences:
+                <div style="color:lightgreen">
+                  <li id="red1">What?</li>
+                  <li id="red2">What?</li>
+                  <li id="red3">What?</li>
+                  <li id="red4">What?</li>
+                </div>
+                <ul>
+        </div>
+      </div>
+
+      <!-- Cool circuitry background image -->
+      <div class="parallax-container center valign-wrapper" style="height:40px">
+        <div class="parallax">
+          <img src="../templatePic/circuitback.jpg">
+        </div>
+      </div>
+
+      <!-- Mission Info -->
+      <div class="row" style="background-color:black; margin:0px; color:darkorange">
+        <h1>The Mission:</h1>
+        <div class="col s2 m2 l2 left-align">
+          <h5 style="margin:0px">Details:</h5>
+          <div><span>Danger Level: </span><span id="danger" style="color:orange"></span></div>
+          <div><span>District: </span><span id="place" style="color:orange"></span></div>
+          <div>Equipment: </div>
+          <div style="color:orange">
+            <li id="eq1">What?</li>
+            <li id="eq2">What?</li>
+            <li id="eq3">What?</li>
+            <li id="eq4">What?</li>
+            <li id="eq5">What?</li>
+          </div>
+          <ul>
+        </div>
+        <div class="col s7 m7 l7 left-align">
+          <div class="row">
+            <div class="col s4 m4 l4 left-align">
+              <div>
+                <font size='3'>District Picture:</font>
+              </div>
+              <image id="districtpic" class="left-align" style="height:150px; width:200px">
+            </div>
+            <div class="col s8 m8 l8 center-align" style="padding:0px">
+              <div>
+                <font size='3'>Mission Details:</font>
+              </div>
+              <p id="mission" style="color:orange"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col s3 m3 l3 center-align">
+          <div style="text-weight:bold; margin:0px">
+            <font size="4">Handler:</font>
+          </div>
+          <div id="handlerCodename" style="margin:0px; padding-bottom:10px; color:orange">Codename</div>
+          <image id="handlerpic" class="center-align" style="height:100px; margin:0px">
+        </div>
+      </div>
+
+      <!-- Cool circuitry background image -->
+      <div class="parallax-container center valign-wrapper" style="height:50px">
+        <div class="parallax">
+          <img src="../templatePic/circuitback.jpg">
+        </div>
+      </div>
+
+      <!-- Button to Start the Quiz -->
+      <div class="container-wrapper center-align" style="padding-top: 20px; padding-bottom:20px">
+        <button id="proceedButton" class="btn btn-large waves-effect waves-light red white-text">Proceed</button>
+      </div>
+
+      <!-- Cool circuitry background image -->
+      <div class="parallax-container center valign-wrapper" style="height:40px">
+        <div class="parallax">
+          <img src="../templatePic/circuitback.jpg">
+        </div>
+      </div>
+    </div>
+    <div id="thequiz" hidden>
+      <!-- Background for Quiz -->
+      <div class="parallax-container center valign-wrapper" style="height:20px">
+        <div class="parallax">
+          <img src="templatePic/dangerzone.jpg">
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="container-wrapper">
+        <div class="row valign-wrapper">
+          <div class="col s1 m1 l1">
+            <img src="templatePic/paranoia.png" style="height:70px; padding-top:10px; padding-left:15px">
+          </div>
+          <div class="col s11 m11 l11 center-align valign" style="padding-top:18px">
+            <h4 style="color:red">HERE IS QUIZ 342FD34B, DO NOT FAIL!</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background for Quiz -->
+      <div class="parallax-container center valign-wrapper" style="height:30px">
+        <div class="parallax">
+          <img src="templatePic/dangerzone.jpg">
+        </div>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="row" style="background-color:black">
+        <div class="col s12 m12 l12 left-align" style="color:limegreen">
+          <h3 id="questionOne">Question 1:</h3>
+          <font size='3'>
+            <p id="question1info" style="color:blue">Randomly generated Text</p>
+          </font>
+        </div>
+      </div>
+
+      <!-- Background for Quiz -->
+      <div class="parallax-container center valign-wrapper" style="height:30px">
+        <div class="parallax">
+          <img src="templatePic/dangerzone.jpg">
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="row" style="background-color:black">
+        <div class="col s12 m12 l12 left-align" style="color:limegreen">
+          <h3 id="questionTwo">Question 2:</h3>
+          <font size='3'>
+            <p id="question2info" style="color:blue">Randomly generated Text</p>
+          </font>
+        </div>
+      </div>
+
+      <!-- Background for Quiz -->
+      <div class="parallax-container center valign-wrapper" style="height:30px">
+        <div class="parallax">
+          <img src="templatePic/dangerzone.jpg">
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="row" style="background-color:black">
+        <div class="col s12 m12 l12 left-align" style="color:limegreen">
+          <h3 id="questionThree">Question 3:</h3>
+          <font size='3'>
+            <p id="question3info" style="color:blue">Randomly generated Text</p>
+          </font>
+        </div>
+      </div>
+
+      <!-- Background for Quiz -->
+      <div class="parallax-container center valign-wrapper" style="height:150px">
+        <div class="parallax">
+          <img src="templatePic/dangerzone.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
     <div id="mocha"></div>
     <script src="mocha.js"></script>
     <script src="chai.js"></script>
     <script>mocha.setup('bdd');</script>
-    <script src="../js/index.js"></script>
+    <script src="../index.js"></script>
     <script src="tests.js"></script>
     <script>
       mocha.run();

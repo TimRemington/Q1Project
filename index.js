@@ -14,22 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let corpBS3 = "Enthusiastically e-enable viral collaboration and idea-sharing."
 
   // Arrays for random generation of terms
-  let firstName = ['Ben', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
-  let lastName = ['Remington', 'Smith', 'Banana', 'Greep', 'Johnson', 'Greenswade', 'Mechner', 'Mitsoda', 'Herrick', 'Preston']
+  let firstName = ['Ben','Kevin', 'Joel', 'Mary', 'Stacy', 'Andrew', 'Willaim', 'Laurence', 'Tyler', 'Craig', 'Matthew', 'John', 'Riley', 'Theodore', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
+  let lastName = ['Remington', 'Gadsden', 'Cortez', 'Lupo', 'Jannek', '01001010', 'Hanson', 'McClaren', 'Roberts', 'Phillips', 'Cashel', 'Breslin', 'Hoyt', 'Averro', 'Gilligan', 'Strickland', 'Dresden', 'Womack', 'Reynolds', 'Perkins', 'Heston', 'Smith', 'Banana', 'Greep', 'Johnson', 'Greenswade', 'Mechner', 'Mitsoda', 'Herrick', 'Preston']
   let location = ['London', 'Toronto', 'Portland', 'Delphi', 'New Orleans', 'Dublin', 'Tokyo', 'Elysium', 'The Moon', 'San Francisco', 'The Crater', 'the Great Garbage Pit', 'Chicago', 'Pandora', 'Mega City One', 'Detroit']
-  let pets = ['rats', 'dogs', 'cats', 'bunnies', 'horses', 'ferrets', 'goldfish', 'humans (humans!?)', 'sea turtles', 'mice', 'geese']
-  let petName = ['Greeno', 'Fluffy', 'Mr. Whiskers', 'Tucker', 'Leeno', 'Bandit', 'Barkus', 'THE EVIL ONE', 'Friskers', 'Doogal']
-  let wrongDoers = ['bandits', 'marauders', 'killers', 'gangers', 'circus clowns', 'pogo stick gansters', 'mobsters', 'genetically mutated crab men']
-  let victims = ['women', 'children', 'house pets', 'random homeless people', 'old ladies', 'freemasons', 'men', 'people who talk in movie theaters']
+  let pets = ['rats', 'dogs', 'cats', 'bunnies', 'horses', 'ferrets', 'goldfish', 'humans (humans!?)', 'sea turtles', 'mice', 'geese', 'hamsters']
+  let petName = ['Greeno', 'Micky', 'Donald', 'Spike', 'Cain', 'Lester', 'Fluffy', 'Mr. Whiskers', 'Tucker', 'Leeno', 'Bandit', 'Barkus', 'THE EVIL ONE', 'Friskers', 'Doogal']
+  let wrongDoers = ['bandits', 'marauders', 'killers', 'gangers', 'circus clowns', 'pogo stick gansters', 'mobsters', 'genetically mutated crab men', 'cannibals', 'clowns']
+  let victims = ['women', 'children', 'house pets', 'random homeless people', 'old ladies', 'freemasons', 'men', 'people who talk in movie theaters', 'circus clowns']
   let company = ['Exodar', 'Tellux', 'Unicron Mining Corporation', 'Wri-X', 'Harcrow Cyberdynamics', 'U&K Polyservices']
-  let hobbies = ['Golfing', 'Slaying my Enemies', 'Vigilante Justice', 'Skiing', 'Board Games', 'Hiking', 'Jogging', 'Fighting the MAN']
+  let hobbies = ['Golfing', 'Slaying my Enemies', 'Vigilante Justice', 'Skiing', 'Board Games', 'Hiking', 'Jogging', 'Fighting the MAN', 'Chess', 'Painting', 'Travel', 'Boxing', 'Bicycling', 'Cooking']
   let type = ['mining', 'cloning', 'accounting', 'weapons', 'private contracting', 'baking', 'cyber security', 'asset acquisition', 'transportation']
   let size = ['large', 'small', 'pathetic', 'medium', 'unknown', 'rising', 'massive', 'powerful', 'influential']
   let zodiac = ['Aries', 'Pisces', 'Capricorn', 'Scorpio', 'Sagittarius', 'Virgo', 'Aquarius', 'Taurus', 'Cancer', 'Zeegoop?', 'Libra', 'Gemini', 'Hastur', 'Leo']
   let nationality = ['American', 'British', 'Scottish', 'Jamaican', 'German', 'Italian', 'Greek', 'Jewish', 'Nigerian', 'Chinese', 'Japanese', 'Brazilian', 'Antarctican', 'Martian', 'Lunar', 'Venusian', 'Titanian', 'Europan', 'Ilian', 'Zeegoop']
   let color = ['Red', 'Blue', 'Yellow', 'Green', 'Orange', 'Purple', 'Black', 'White', 'Brown', 'Tan', 'The Unknown Color', 'Chartreuse', 'Crimson', 'Pink', 'Burgandy', 'Aquamarine', 'Turquoise', 'Gold', 'Silver']
   let animal = ['Bear', 'Sloth', 'Red Tailed Fox', 'Naruto', 'Rat', 'Sea Lion', 'Ferret', 'Dog', 'Cat', 'Tiger', 'Cheetah', 'Mole', 'Mouse', 'Hamster', 'Zebra', 'Lion', 'Elephant', 'Bison', 'Horse', 'Sugar Glider']
-  let equipment = ['Pistol', 'Rope', 'Banana', 'Plumbus', 'VR Goggles', 'Grenade', 'Bag of Cashews', 'Hamster', 'Sword', 'USB Drives', 'Machine Gun', 'Camera', 'Water Balloon', '100 Dollars', 'Pants', 'Wing Suit', 'Suitcase']
+  let equipment = ['Pistol', 'Rope', 'Banana', 'Plumbus', 'VR Goggles', 'Grenade', 'Bag of Cashews', 'Hamster', 'Sword', 'USB Drives', 'Machine Gun', 'Camera', 'Water Balloon', '100 Dollars', 'Pants', 'Wing Suit', 'Suitcase', 'Gravity Boots', 'Binoculars', '1000 Dollars', ]
 
   // Variables to save some important info for quizzing later
   let handler = `${randomElement(firstName)} "The ${randomElement(animal)}" ${randomElement(lastName)}`
@@ -120,15 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Items going to local storage for the user to be quizzed on later
   localStorage.setItem("userZodiac", `${currentZodiac}`)
-  localStorage.setItem("userColor",`${currentColor}`)
-  localStorage.setItem("userFavAnimal",`${currentFavAnimal}`)
-  localStorage.setItem("userLastJob",`${currentLastJob}`)
-  localStorage.setItem("userDanger",`${currentDanger}`)
-  localStorage.setItem("userHandler",`${handler}`)
-  localStorage.setItem("userHomeTown",`${homeTown}`)
-  localStorage.setItem("userLastJobYears",`${lastJobYears}`)
-  localStorage.setItem("userChildhoodPets",`${childhoodPets}`)
-  localStorage.setItem("userBestFriend",`${bestFriend}`)
+  localStorage.setItem("userColor", `${currentColor}`)
+  localStorage.setItem("userFavAnimal", `${currentFavAnimal}`)
+  localStorage.setItem("userLastJob", `${currentLastJob}`)
+  localStorage.setItem("userDanger", `${currentDanger}`)
+  localStorage.setItem("userHandler", `${handler}`)
+  localStorage.setItem("userHomeTown", `${homeTown}`)
+  localStorage.setItem("userLastJobYears", `${lastJobYears}`)
+  localStorage.setItem("userChildhoodPets", `${childhoodPets}`)
+  localStorage.setItem("userBestFriend", `${bestFriend}`)
 
   // Tests to make sure local storage matches
   console.log(localStorage.getItem("userZodiac"))
@@ -143,65 +143,100 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(localStorage.getItem("userBestFriend"))
 
   document.getElementById("proceedButton").addEventListener("click", toggleQuiz)
-// })
-// })
-// })
+  //document.getElementById("endButton").addEventListener("click", finalAnswers)
+
+  // })
+  // })
+  // })
 
 
+  // ----------------
+  // THE FUNCTIONS
+  // ----------------
 
-
-
-// Functions for random numbers starting at 0 or 1
-function random0(numberRan1) {
-  return Math.floor(Math.random() * numberRan1)
-}
-function random1(numberRan2) {
-  return Math.floor(Math.random() * numberRan2) + 1
-}
-
-// Function to randomly create back story
-function backStoryCreator (homeTown, childhoodPets) {
-  let selection = random1(2)
-  let result
-
-  switch (selection){
-    case 1:
-      result = `You grew up in ${homeTown}, with your two pet ${childhoodPets}, ${randomElement(petName)} and ${randomElement(petName)}. Everything was going well for you until tragedy struck. A group of ${randomElement(wrongDoers)} from ${randomElement(location)} invaded. They were ruthless, killing ${randomElement(victims)} and ${randomElement(victims)} alike. Once the flames settled, you fled, moving to ${randomElement(location)}. Here, you have made a new name for yourself, and are looking to get back at those who wronged you.  You believe working at ${randomElement(company)} will further this goal.`
-      break;
-    case 2:
-      result = `You were born in ${homeTown}, but moved to ${randomElement(location)} when you were very young. In your early days, you ran with a group of ${randomElement(wrongDoers)}, but after putting some ${randomElement(victims)} in the hospital, you turned away from your old life.  You took a small job handling a ${randomElement(animal)}, during which you realized you loved animals.  Shortly after you adopted your two pet ${randomElement(pets)}, whom you named ${randomElement(petName)} and ${randomElement(petName)}. You now believe you can use your unique skill set to further ${randomElement(company)}'s goals`
-      break;
-    case 3:
-      break;
-    case 4:
-      break;
-    case 5:
-      break;
+  // Functions for random numbers starting at 0 or 1
+  function random0(numberRan1) {
+    return Math.floor(Math.random() * numberRan1)
   }
 
-  return result
-}
+  function random1(numberRan2) {
+    return Math.floor(Math.random() * numberRan2) + 1
+  }
 
-// Function to pull element randomly from Array
-function randomElement(arr) {
-  let len = arr.length
-  return arr[random0(len)]
-}
+  // Function to randomly create back story
+  function backStoryCreator(homeTown, childhoodPets) {
+    let selection = random1(2)
+    let result
 
-// Function to get a random district picture
-function districtPic () {
-  document.getElementById('districtpic').setAttribute('src', `district/district${random1(11)}.jpg`)
-}
+    switch (selection) {
+      case 1:
+        result = `You grew up in ${homeTown}, with your two pet ${childhoodPets}, ${randomElement(petName)} and ${randomElement(petName)}. Everything was going well for you until tragedy struck. A group of ${randomElement(wrongDoers)} from ${randomElement(location)} invaded. They were ruthless, killing ${randomElement(victims)} and ${randomElement(victims)} alike. Once the flames settled, you fled, moving to ${randomElement(location)}. Here, you have made a new name for yourself, and are looking to get back at those who wronged you.  You believe working at ${randomElement(company)} will further this goal.`
+        break;
+      case 2:
+        result = `You were born in ${homeTown}, but moved to ${randomElement(location)} when you were very young. In your early days, you ran with a group of ${randomElement(wrongDoers)}, but after putting some ${randomElement(victims)} in the hospital, you turned away from your old life.  You took a small job handling a ${randomElement(animal)}, during which you realized you loved animals.  Shortly after you adopted your two pet ${randomElement(pets)}, whom you named ${randomElement(petName)} and ${randomElement(petName)}. You now believe you can use your unique skill set to further ${randomElement(company)}'s goals`
+        break;
+    }
 
-// Function to get a random handler picture
-function handlerPic () {
-  document.getElementById('handlerpic').setAttribute('src', `handler/handler${random1(14)}.jpg`)
-}
+    return result
+  }
 
-// Function to swap the info and give the quiz
-function toggleQuiz () {
-  document.getElementById('theinfo').setAttribute('hidden', 'true')
-  document.getElementById('thequiz').removeAttribute('hidden')
+  // Function to pull element randomly from Array
+  function randomElement(arr) {
+    let len = arr.length
+    return arr[random0(len)]
+  }
+
+  // Function to get a random district picture
+  function districtPic() {
+    document.getElementById('districtpic').setAttribute('src', `district/district${random1(11)}.jpg`)
+  }
+
+  // Function to get a random handler picture
+  function handlerPic() {
+    document.getElementById('handlerpic').setAttribute('src', `handler/handler${random1(14)}.jpg`)
+  }
+
+  // Function to swap the info and give the quiz
+  function toggleQuiz() {
+    document.getElementById('theinfo').setAttribute('hidden', 'true')
+    document.getElementById('thequiz').removeAttribute('hidden')
+  }
+
+  // function question1() {}
+  //
+  // function finalAnswers(ans1, ans2, ans3) {
+  //
+  //   document.getElementById('thequiz').setAttribute('hidden', 'true')
+  //   document.getElementById('finalstatus').removeAttribute('hidden')
+  //
+  //   if () {
+  //     return youLose()
+  //   }
+  //   if () {
+  //     return youLose()
+  //   }
+  //   if () {
+  //     return youLose()
+  //   }
+  //
+  //   return youWin()
+  // }
+
+  // Function for if you Lose
+  function youLose() {
+    document.getElementById('thequiz').setAttribute('hidden', 'true')
+    document.getElementById('finalStatus').removeAttribute('hidden')
+
+    document.getElementById('lastStatement').innerText = "You Died."
+    document.getElementById('lastGIF').innerHTML = `<iframe src="https://giphy.com/embed/3o7abwbzKeaRksvVaE" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starwars-movie-star-wars-3o7abwbzKeaRksvVaE">via GIPHY</a></p>`
+  }
+  // Function for it you Win
+  function youWin() {
+  document.getElementById('thequiz').setAttribute('hidden', 'true')
+  document.getElementById('finalStatus').removeAttribute('hidden')
+
+  document.getElementById('lastStatement').innerText = "You did it agent."
+  document.getElementById('lastGIF').innerHTML = '<iframe src="https://giphy.com/embed/10AoZDUmPrhguQ" width="450" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/compilation-10AoZDUmPrhguQ">via GIPHY</a></p>'
 }
 
 });
