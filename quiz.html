@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Espionage Quiz</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- My CSS-->
+  <link type="text/css" rel="stylesheet" href="index.css" media="screen,projection" />
+  <!-- My JS -->
+  <script src="index.js" charset="utf-8"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+</head>
+
+<body style="background-color:black; font-family: 'Russo One', sans-serif;">
+  <div id="thequiz">
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:20px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="container-wrapper">
+      <div class="row valign-wrapper">
+        <div class="col s1 m1 l1">
+          <img src="templatePic/paranoia1.png" style="height:70px; padding-top:10px; padding-left:15px">
+        </div>
+        <div class="col s11 m11 l11 center-align valign" style="padding-top:18px">
+          <h4 style="color:red">HERE IS QUIZ 342FD34B, DO NOT FAIL!</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:30px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="row" style="background-color:black">
+      <div class="col s12 m12 l12 left-align" style="color:red">
+        <h3 id="questionOne">Question 1:</h3>
+        <font size='3'>
+          <p id="question1info" style="color:blue">Randomly generated Text</p>
+        </font>
+      </div>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:30px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="row" style="background-color:black">
+      <div class="col s12 m12 l12 left-align" style="color:red">
+        <h3 id="questionTwo">Question 2:</h3>
+        <font size='3'>
+          <p id="question2info" style="color:blue">Randomly generated Text</p>
+        </font>
+      </div>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:30px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="row" style="background-color:black">
+      <div class="col s12 m12 l12 left-align" style="color:red">
+        <h3 id="questionThree">Question 3:</h3>
+        <font size='3'>
+          <p id="question3info" style="color:blue">Randomly generated Text</p>
+        </font>
+      </div>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:30px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Button to Submit Answers-->
+    <div class="container-wrapper center-align" style="padding-top: 20px; padding-bottom:20px">
+      <button id="endButton" class="btn btn-large waves-effect waves-light red">Submit Answers</button>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:150px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id='finalStatus' hidden>
+    <h3 id="lastStatement"></h3>
+    <div id="lastGIF"></div>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+</body>
+
+</html>
