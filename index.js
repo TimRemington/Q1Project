@@ -452,16 +452,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let itemAssignment = randomElement(equipment)
 
   // API that is grabbing a random picture
-  // $.ajax({
-  //   url: 'https://randomuser.me/api/',
-  //   dataType: 'json',
-  //   success: function(data) {
-  //     console.log(data);
-  //
-  //     let tempPic = document.getElementById('profilePicture')
-  //     tempPic.src = data.results[0].picture.large
-  //   }
-  // });
+  $.ajax({
+    url: 'https://randomuser.me/api/',
+    dataType: 'json',
+    success: function(data) {
+      console.log(data);
+
+      let tempPic = document.getElementById('profilePicture')
+      tempPic.src = data.results[0].picture.large
+    }
+  });
 
   // Creates the NAME and BIO on the HTML page
   document.getElementById("agentName").innerText = `Name: ${randomElement(firstName)} ${randomElement(lastName)}`
