@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 </head>
 
-<body style="background-color:#303030; font-family: 'Russo One', sans-serif;">
+<body style="background-color:white; font-family: 'Russo One', sans-serif;">
   <div id="thequiz">
     <!-- Background for Quiz -->
     <div class="parallax-container center valign-wrapper" style="height:20px">
@@ -46,17 +46,19 @@
     </div>
 
     <!-- Question 1 -->
-    <div class="row" style="background-color:#303030">
+    <div class="row" style="background-color:white">
       <div class="col s12 m12 l12 left-align" style="color:red">
-        <form>
         <h3 id="questionOne">Question 1:</h3>
-          <ul>
-            <li><input type="button" name="q1" value="a"></li>
-            <li><input type="button" name="q1" value="b"></li>
-            <li><input type="button" name="q1" value="c"></li>
-            <li><input type="button" name="q1" value="d"></li>
-          </ul>
-        </form>
+        <p>Who was your best friend?</p>
+        <div class="input-field col s12 m6">
+            <select class="initialized">
+                <option id = "optionQ1">Choose your option</option>
+                <option id="q1-1">Option 1</option>
+                <option id="q1-2">Option 2</option>
+                <option id="q1-3">Option 3</option>
+                <option id='q1-4'>Option 4</option>
+            </select>
+        </div>
       </div>
     </div>
 
@@ -68,7 +70,7 @@
     </div>
 
     <!-- Question 2 -->
-    <div class="row" style="background-color:#303030">
+    <div class="row" style="background-color:white">
       <div class="col s12 m12 l12 left-align" style="color:red">
         <h3 id="questionTwo">Question 2:</h3>
         <font size='3'>
@@ -85,7 +87,7 @@
     </div>
 
     <!-- Question 3 -->
-    <div class="row" style="background-color:#303030">
+    <div class="row" style="background-color:white">
       <div class="col s12 m12 l12 left-align" style="color:red">
         <h3 id="questionThree">Question 3:</h3>
         <font size='3'>

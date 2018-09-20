@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let elem = document.querySelectorAll('.modal');
   let instance = M.Modal.init(elem);
 
+  // Use to get selection field to work with Materialize
+  let ele = document.querySelectorAll('select');
+  let opts = document.querySelectorAll('option');
+  let instan = M.FormSelect.init(ele, opts);
+
   // Arrays for random generation of terms
   let firstName = ['Ben','Kevin', 'Joel', 'Mary', 'Stacy', 'Andrew', 'Willaim', 'Laurence', 'Tyler', 'Craig', 'Matthew', 'John', 'Riley', 'Theodore', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
   let lastName = ['Remington', 'Gadsden', 'Cortez', 'Lupo', 'Jannek', '01001010', 'Hanson', 'McClaren', 'Roberts', 'Phillips', 'Cashel', 'Breslin', 'Hoyt', 'Averro', 'Gilligan', 'Strickland', 'Dresden', 'Womack', 'Reynolds', 'Perkins', 'Heston', 'Smith', 'Banana', 'Greep', 'Johnson', 'Greenswade', 'Mechner', 'Mitsoda', 'Herrick', 'Preston']
@@ -38,6 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let childhoodPetsQ = localStorage.getItem("userChildhoodPets")
   let bestFriendQ = localStorage.getItem("userBestFriend")
 
+  document.getElementById('q1-1').innerText = `${randomElement(firstName)} ${randomElement(lastName)}`
+  document.getElementById('q1-2').innerText = `${randomElement(firstName)} ${randomElement(lastName)}`
+  document.getElementById('q1-3').innerText = bestFriendQ
+  document.getElementById('q1-4').innerText = `${randomElement(firstName)} ${randomElement(lastName)}`
+
+
   console.log(zodiacQ)
   console.log(colorQ)
   console.log(favAnimalQ)
@@ -57,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function random0(numberRan1) {
     return Math.floor(Math.random() * numberRan1)
   }
-
   function random1(numberRan2) {
     return Math.floor(Math.random() * numberRan2) + 1
   }
@@ -67,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let len = arr.length
     return arr[random0(len)]
   }
-
 
   // Function for if you Lose
   function youLose() {
@@ -79,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Function for it you Win
   function youWin() {
-  document.getElementById('thequiz').setAttribute('hidden', 'true')
-  document.getElementById('finalStatus').removeAttribute('hidden')
+    document.getElementById('thequiz').setAttribute('hidden', 'true')
+    document.getElementById('finalStatus').removeAttribute('hidden')
 
-  document.getElementById('lastStatement').innerText = "You did it agent."
-  document.getElementById('lastGIF').innerHTML = '<iframe src="https://giphy.com/embed/10AoZDUmPrhguQ" width="450" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/compilation-10AoZDUmPrhguQ">via GIPHY</a></p>'
+    document.getElementById('lastStatement').innerText = "You did it agent."
+    document.getElementById('lastGIF').innerHTML = '<iframe src="https://giphy.com/embed/10AoZDUmPrhguQ" width="450" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/compilation-10AoZDUmPrhguQ">via GIPHY</a></p>'
 }
 
 });
