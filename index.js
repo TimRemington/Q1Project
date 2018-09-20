@@ -425,15 +425,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let instance = M.Modal.init(elem);
 
   // Arrays for random generation of terms
-  let firstName = ['Ben', 'Kevin', 'Joel', 'Mary', 'Stacy', 'Andrew', 'Willaim', 'Laurence', 'Tyler', 'Craig', 'Matthew', 'John', 'Riley', 'Theodore', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
-  let lastName = ['Remington', 'Gadsden', 'Cortez', 'Lupo', 'Jannek', '01001010', 'Hanson', 'McClaren', 'Roberts', 'Phillips', 'Cashel', 'Breslin', 'Hoyt', 'Averro', 'Gilligan', 'Strickland', 'Dresden', 'Womack', 'Reynolds', 'Perkins', 'Heston', 'Smith', 'Banana', 'Greep', 'Johnson', 'Greenswade', 'Mechner', 'Mitsoda', 'Herrick', 'Preston']
-  let location = ['London', 'Toronto', 'Portland', 'Delphi', 'New Orleans', 'Dublin', 'Tokyo', 'Elysium', 'The Moon', 'San Francisco', 'The Crater', 'the Great Garbage Pit', 'Chicago', 'Pandora', 'Mega City One', 'Detroit']
-  let pets = ['rats', 'dogs', 'cats', 'bunnies', 'horses', 'ferrets', 'goldfish', 'humans (humans!?)', 'sea turtles', 'mice', 'geese', 'hamsters']
-  let petName = ['Greeno', 'Micky', 'Donald', 'Spike', 'Cain', 'Lester', 'Fluffy', 'Mr. Whiskers', 'Tucker', 'Leeno', 'Bandit', 'Barkus', 'THE EVIL ONE', 'Friskers', 'Doogal']
-  let wrongDoers = ['bandits', 'marauders', 'killers', 'gangers', 'circus clowns', 'pogo stick gangsters', 'mobsters', 'genetically mutated crab men', 'cannibals', 'clowns']
+  let firstName = ['Ben', 'Amy', 'Lana', 'Martin', 'Roy', 'Elliot', 'Monica', 'Miranda', 'Kevin', 'Joel', 'Mary', 'Stacy', 'Andrew', 'Willaim', 'Laurence', 'Tyler', 'Craig', 'Matthew', 'John', 'Riley', 'Theodore', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
+  let lastName = ['Remington', 'Masterson', 'Meeks', 'Wolf', 'Gadsden', 'Cortez', 'Lupo', 'Jannek', '01001010', 'Hanson', 'McClaren', 'Roberts', 'Phillips', 'Cashel', 'Breslin', 'Hoyt', 'Averro', 'Gilligan', 'Strickland', 'Dresden', 'Womack', 'Reynolds', 'Perkins', 'Heston', 'Smith', 'Banana', 'Greep', 'Johnson', 'Greenswade', 'Mechner', 'Mitsoda', 'Herrick', 'Preston']
+  let location = ['London', 'Mumbai','Heck', 'Shantyville', 'Westworld', 'San Vangelis', 'Dubai', 'Cardiff', 'Moscow', 'San Diego', 'Lunar City', 'Toronto', 'Portland', 'Delphi', 'New Orleans', 'Dublin', 'Tokyo', 'Elysium', 'The Moon', 'San Francisco', 'The Crater', 'the Great Garbage Pit', 'Chicago', 'Pandora', 'Mega City One', 'Detroit']
+  let pets = ['rats', 'dogs', 'cockroaches', 'crabs', 'cats', 'bunnies', 'horses', 'ferrets', 'goldfish', 'humans (humans!?)', 'sea turtles', 'mice', 'geese', 'hamsters']
+  let petName = ['Greeno', 'Pluto', 'Charlie', 'Max', 'Rocky', 'Buddy', 'Cooper', 'Lenny', 'Kafka', 'Micky', 'Donald', 'Spike', 'Cain', 'Lester', 'Fluffy', 'Mr. Whiskers', 'Tucker', 'Leeno', 'Bandit', 'Barkus', 'THE EVIL ONE', 'Friskers', 'Doogal']
+  let wrongDoers = ['bandits', 'stab-guys', 'wild dogs', 'marauders', 'killers', 'gangers', 'circus clowns', 'pogo stick gansters', 'mobsters', 'genetically mutated crab men', 'cannibals', 'clowns']
   let victims = ['women', 'children', 'house pets', 'random homeless people', 'old ladies', 'freemasons', 'men', 'people who talk in movie theaters', 'circus clowns']
-  let company = ['Exodar', 'Tellux', 'Unicron Mining Corporation', 'Wri-X', 'Harcrow Cyberdynamics', 'U&K Polyservices']
-  let hobbies = ['Golfing', 'Slaying my Enemies', 'Vigilante Justice', 'Skiing', 'Board Games', 'Hiking', 'Jogging', 'Fighting the MAN', 'Chess', 'Painting', 'Travel', 'Boxing', 'Bicycling', 'Cooking']
+  let company = ['Exodar', 'Ubisoft', 'Valve', 'Huang-Feng', 'Galvanize', 'Whole Foods', 'Sony', 'Microsoft', 'EA', 'Walmart', 'Fisher-Price', 'Syntho', 'QuanGen', 'Tellux', 'Unicron Mining Corporation', 'Wri-X', 'Harcrow Cyberdynamics', 'U&K Polyservices']
+  let hobbies = ['Golfing', 'Knitting', 'Slaying my Enemies', 'Vigilante Justice', 'Skiing', 'Board Games', 'Hiking', 'Jogging', 'Fighting the MAN', 'Chess', 'Painting', 'Travel', 'Boxing', 'Bicycling', 'Cooking']
   let type = ['mining', 'cloning', 'accounting', 'weapons', 'private contracting', 'baking', 'cyber security', 'asset acquisition', 'transportation']
   let size = ['large', 'small', 'pathetic', 'medium', 'unknown', 'rising', 'massive', 'powerful', 'influential']
   let zodiac = ['Aries', 'Pisces', 'Capricorn', 'Scorpio', 'Sagittarius', 'Virgo', 'Aquarius', 'Taurus', 'Cancer', 'Zeegoop?', 'Libra', 'Gemini', 'Hastur', 'Leo']
