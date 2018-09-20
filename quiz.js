@@ -1,3 +1,55 @@
+// ----------------
+// HELPER FUNCTIONS
+// ----------------
+
+// Functions for random numbers starting at 0 or 1
+function random0(numberRan1) {
+  return Math.floor(Math.random() * numberRan1)
+}
+
+function random1(numberRan2) {
+  return Math.floor(Math.random() * numberRan2) + 1
+}
+
+// Function to pull element randomly from Array
+function randomElement(arr) {
+  let len = arr.length
+  return arr[random0(len)]
+}
+
+// Function to grade the user when they submit
+function gradeResults() {
+  let answerOne = document.getElementById('ques1options').value
+  let answerTwo = document.getElementById('ques2options').value
+  let answerThree = document.getElementById('ques3options').value
+  let answerFour = document.getElementById('ques4options').value
+  let answerFive = document.getElementById('ques5options').value
+
+  if (answerOne == 3 && answerTwo == 3 && answerThree == 4 && answerFour == 1 && answerFive == 2) {
+    return youWin()
+  } else {
+    return youLose()
+  }
+
+}
+
+// Function to let the user know they won
+function youWin() {
+  document.getElementById('winning').hidden = false
+  document.getElementById('thequiz').hidden = true
+}
+
+// Function to let the user know they lost
+function youLose() {
+  document.getElementById('losing').hidden = false
+  document.getElementById('thequiz').hidden = true
+}
+
+
+// ----------------
+// START OF PAGE
+// ----------------
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Background JS (The CircuitBoard)
@@ -9,12 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let instance = M.Modal.init(elem);
 
   // Use to get selection field to work with Materialize
-  let ele = document.querySelectorAll('select');
-  let opts = document.querySelectorAll('option');
-  let instan = M.FormSelect.init(ele, opts);
+  var elements = document.querySelectorAll('select');
+  var inst = M.FormSelect.init(elements);
 
   // Arrays for random generation of terms
-  let firstName = ['Ben','Kevin', 'Joel', 'Mary', 'Stacy', 'Andrew', 'Willaim', 'Laurence', 'Tyler', 'Craig', 'Matthew', 'John', 'Riley', 'Theodore', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
+  let firstName = ['Ben', 'Kevin', 'Joel', 'Mary', 'Stacy', 'Andrew', 'Willaim', 'Laurence', 'Tyler', 'Craig', 'Matthew', 'John', 'Riley', 'Theodore', 'Luke', 'Codename', 'Rowan', 'Jen', 'Mordecai', 'Grant', 'Jonah', 'Tim', 'Allen', 'Erik', 'Garrison', 'Leonard', 'Bud', 'Draco', 'Leeno', 'Alex', 'Henry', 'Marco']
   let lastName = ['Remington', 'Gadsden', 'Cortez', 'Lupo', 'Jannek', '01001010', 'Hanson', 'McClaren', 'Roberts', 'Phillips', 'Cashel', 'Breslin', 'Hoyt', 'Averro', 'Gilligan', 'Strickland', 'Dresden', 'Womack', 'Reynolds', 'Perkins', 'Heston', 'Smith', 'Banana', 'Greep', 'Johnson', 'Greenswade', 'Mechner', 'Mitsoda', 'Herrick', 'Preston']
   let location = ['London', 'Toronto', 'Portland', 'Delphi', 'New Orleans', 'Dublin', 'Tokyo', 'Elysium', 'The Moon', 'San Francisco', 'The Crater', 'the Great Garbage Pit', 'Chicago', 'Pandora', 'Mega City One', 'Detroit']
   let pets = ['rats', 'dogs', 'cats', 'bunnies', 'horses', 'ferrets', 'goldfish', 'humans (humans!?)', 'sea turtles', 'mice', 'geese', 'hamsters']
@@ -43,12 +94,43 @@ document.addEventListener('DOMContentLoaded', () => {
   let childhoodPetsQ = localStorage.getItem("userChildhoodPets")
   let bestFriendQ = localStorage.getItem("userBestFriend")
 
-  document.getElementById('q1-1').innerText = `${randomElement(firstName)} ${randomElement(lastName)}`
-  document.getElementById('q1-2').innerText = `${randomElement(firstName)} ${randomElement(lastName)}`
-  document.getElementById('q1-3').innerText = bestFriendQ
-  document.getElementById('q1-4').innerText = `${randomElement(firstName)} ${randomElement(lastName)}`
+  // A lot of code here generating the questions
+  document.getElementById('ques1options').innerHTML = `
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">${randomElement(firstName)} ${randomElement(lastName)}</option>
+    <option value="2">${randomElement(firstName)} ${randomElement(lastName)}</option>
+    <option value="3">${bestFriendQ}</option>
+    <option value="4">${randomElement(firstName)} ${randomElement(lastName)}</option>`
 
+  document.getElementById('ques2options').innerHTML = `
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">${randomElement(pets)}</option>
+    <option value="2">${randomElement(pets)}</option>
+    <option value="3">${childhoodPetsQ}</option>
+    <option value="4">${randomElement(pets)}</option>`
 
+  document.getElementById('ques3options').innerHTML = `
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">${randomElement(zodiac)}</option>
+    <option value="2">${randomElement(zodiac)}</option>
+    <option value="3">${randomElement(zodiac)}</option>
+    <option value="4">${zodiacQ}</option>`
+
+  document.getElementById('ques4options').innerHTML = `
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">${handlerQ}</option>
+    <option value="2">${randomElement(firstName)} "The ${randomElement(animal)}" ${randomElement(lastName)}</option>
+    <option value="3">${randomElement(firstName)} "The ${randomElement(animal)}" ${randomElement(lastName)}</option>
+    <option value="4">${randomElement(firstName)} "The ${randomElement(animal)}" ${randomElement(lastName)}</option>`
+
+  document.getElementById('ques5options').innerHTML = `
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">${randomElement(color)}</option>
+    <option value="2">${colorQ}</option>
+    <option value="3">${randomElement(color)}</option>
+    <option value="4">${randomElement(color)}</option>`
+
+  // Console logs to help cheat with the impossible final quiz
   console.log(zodiacQ)
   console.log(colorQ)
   console.log(favAnimalQ)
@@ -60,39 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(childhoodPetsQ)
   console.log(bestFriendQ)
 
-  // ----------------
-  // THE FUNCTIONS
-  // ----------------
-
-  // Functions for random numbers starting at 0 or 1
-  function random0(numberRan1) {
-    return Math.floor(Math.random() * numberRan1)
-  }
-  function random1(numberRan2) {
-    return Math.floor(Math.random() * numberRan2) + 1
-  }
-
-  // Function to pull element randomly from Array
-  function randomElement(arr) {
-    let len = arr.length
-    return arr[random0(len)]
-  }
-
-  // Function for if you Lose
-  function youLose() {
-    document.getElementById('thequiz').setAttribute('hidden', 'true')
-    document.getElementById('finalStatus').removeAttribute('hidden')
-
-    document.getElementById('lastStatement').innerText = "You Died."
-    document.getElementById('lastGIF').innerHTML = `<iframe src="https://giphy.com/embed/3o7abwbzKeaRksvVaE" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starwars-movie-star-wars-3o7abwbzKeaRksvVaE">via GIPHY</a></p>`
-  }
-  // Function for it you Win
-  function youWin() {
-    document.getElementById('thequiz').setAttribute('hidden', 'true')
-    document.getElementById('finalStatus').removeAttribute('hidden')
-
-    document.getElementById('lastStatement').innerText = "You did it agent."
-    document.getElementById('lastGIF').innerHTML = '<iframe src="https://giphy.com/embed/10AoZDUmPrhguQ" width="450" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/compilation-10AoZDUmPrhguQ">via GIPHY</a></p>'
-}
+  document.getElementById('endButton').addEventListener('click', gradeResults)
 
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Espionage Quiz</title>
   <!--Import Google Icon Font-->
@@ -49,15 +50,12 @@
     <div class="row" style="background-color:white">
       <div class="col s12 m12 l12 left-align" style="color:red">
         <h3 id="questionOne">Question 1:</h3>
-        <p>Who was your best friend?</p>
-        <div class="input-field col s12 m6">
-            <select class="initialized">
-                <option id = "optionQ1">Choose your option</option>
-                <option id="q1-1">Option 1</option>
-                <option id="q1-2">Option 2</option>
-                <option id="q1-3">Option 3</option>
-                <option id='q1-4'>Option 4</option>
-            </select>
+        <p>
+          <font size="3">Who was your best friend?</font>
+        </p>
+        <div class="input-field">
+          <select id="ques1options" class="browser-default">
+          </select>
         </div>
       </div>
     </div>
@@ -73,9 +71,13 @@
     <div class="row" style="background-color:white">
       <div class="col s12 m12 l12 left-align" style="color:red">
         <h3 id="questionTwo">Question 2:</h3>
-        <font size='3'>
-          <p id="question2info" style="color:blue">Randomly generated Text</p>
-        </font>
+        <p>
+          <font size="3">What were your childhood pets?</font>
+        </p>
+        <div class="input-field">
+          <select id="ques2options" class="browser-default">
+          </select>
+        </div>
       </div>
     </div>
 
@@ -90,9 +92,55 @@
     <div class="row" style="background-color:white">
       <div class="col s12 m12 l12 left-align" style="color:red">
         <h3 id="questionThree">Question 3:</h3>
-        <font size='3'>
-          <p id="question3info" style="color:blue">Randomly generated Text</p>
-        </font>
+        <p>
+          <font size="3">What is your Zodiac?</font>
+        </p>
+        <div class="input-field">
+          <select id="ques3options" class="browser-default">
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:30px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="row" style="background-color:white">
+      <div class="col s12 m12 l12 left-align" style="color:red">
+        <h3 id="questionFour">Question 4:</h3>
+        <p>
+          <font size="3">What is the name of your handler?</font>
+        </p>
+        <div class="input-field">
+          <select id="ques4options" class="browser-default">
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background for Quiz -->
+    <div class="parallax-container center valign-wrapper" style="height:30px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="row" style="background-color:white">
+      <div class="col s12 m12 l12 left-align" style="color:red">
+        <h3 id="questionFive">Question 5:</h3>
+        <p>
+          <font size="3">What is your favorite color?</font>
+        </p>
+        <div class="input-field">
+          <select id="ques5options" class="browser-default">
+          </select>
+        </div>
       </div>
     </div>
 
@@ -116,13 +164,50 @@
     </div>
   </div>
 
-  <div id='finalStatus' hidden>
-    <h3 id="lastStatement"></h3>
-    <div id="lastGIF"></div>
+  <div id='winning' class="center" hidden>
+    <div class="parallax-container center valign-wrapper" style="height:100px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <h3>Congradulations agent, you passed the test!</h3>
+    <div>
+      <iframe src="https://giphy.com/embed/10AoZDUmPrhguQ" width="450" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      <p><a href="https://giphy.com/gifs/compilation-10AoZDUmPrhguQ">via GIPHY</a></p>
+    </div>
+
+    <div class="parallax-container center valign-wrapper" style="height:100px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id='losing' class="center" hidden>
+    <div class="parallax-container center valign-wrapper" style="height:100px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
+
+    <h3>YOU FAILED!</h3>
+    <div>
+      <iframe src="https://giphy.com/embed/3o7abwbzKeaRksvVaE" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+
+    <div class="parallax-container center valign-wrapper" style="height:100px">
+      <div class="parallax">
+        <img src="templatePic/dangerzone.jpg">
+      </div>
+    </div>
   </div>
 
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </body>
 
