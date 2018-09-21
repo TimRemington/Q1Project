@@ -10,7 +10,7 @@ It is set in a future were spies are hired to infiltrate corporations to do impo
 
 When the page loads, you will be given an identity you need to memorize. Read your new identity carefully and try to memorize important details.  
 
-![Example](Q1Project/template.png)
+![Example](template.png)
 
 When done, click the PROCEED button at the bottom.
 
